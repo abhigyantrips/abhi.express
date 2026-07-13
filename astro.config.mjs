@@ -1,5 +1,5 @@
 // @ts-check
-import { defineConfig } from "astro/config";
+import { defineConfig, fontProviders } from "astro/config";
 
 import tailwindcss from "@tailwindcss/vite";
 
@@ -21,6 +21,19 @@ export default defineConfig({
 	adapter: cloudflare({
 		imageService: "cloudflare",
 	}),
+
+	fonts: [
+		{
+			provider: fontProviders.fontsource(),
+			name: "Instrument Serif",
+			cssVariable: "--font-display",
+		},
+		{
+			provider: fontProviders.fontsource(),
+			name: "PT Serif",
+			cssVariable: "--font-serif",
+		},
+	],
 
 	integrations: [sitemap()],
 

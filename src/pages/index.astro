@@ -1,17 +1,20 @@
 ---
+import BaseHead from "@/components/base-head.astro";
 import "@/styles/global.css";
 ---
 
 <html lang="en">
 	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<BaseHead />
 	</head>
-	<body>
-		<h1>Astro</h1>
+	<body class="mx-auto max-w-screen-lg space-y-2 px-4 pt-4 font-serif md:px-0 md:pt-20">
+		<h1 class="font-display border-t-2 border-b-2 text-8xl">ABHI DOT EXPRESS.</h1>
+		<div
+			class="flex items-center justify-between bg-black px-1.5 pt-0.5 pb-1 text-sm font-bold text-white uppercase"
+		>
+			<span>{new Date().toLocaleDateString("en-US", { dateStyle: "full" })}</span>
+			<span>{new Date().toLocaleTimeString("en-IN", { hour: "2-digit", minute: "2-digit" })}</span>
+		</div>
+		<div class="py-54 text-center">Looks like a website is in the works.</div>
 	</body>
 </html>
