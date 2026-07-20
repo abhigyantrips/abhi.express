@@ -7,20 +7,10 @@ import sitemap from "@astrojs/sitemap";
 
 import cloudflare from "@astrojs/cloudflare";
 
-import { satteri } from "@astrojs/markdown-satteri";
-
-import { satteriFigure } from "./src/lib/plugins";
-
 // https://astro.build/config
 export default defineConfig({
 	site: import.meta.env.DEV ? "http://localhost:4321" : "https://abhi.express",
 	output: "static",
-
-	markdown: {
-		processor: satteri({
-			hastPlugins: [...satteriFigure()],
-		}),
-	},
 
 	session: {
 		driver: {
