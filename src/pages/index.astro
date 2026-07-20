@@ -13,8 +13,29 @@ import "@/styles/global.css";
 			class="flex items-center justify-between bg-black px-1.5 pt-0.5 pb-1 text-sm font-bold text-white uppercase"
 		>
 			<span>{new Date().toLocaleDateString("en-US", { dateStyle: "full" })}</span>
-			<span>{new Date().toLocaleTimeString("en-IN", { hour: "2-digit", minute: "2-digit" })}</span>
+			<span id="clock">
+				{
+					new Date().toLocaleTimeString("en-IN", {
+						hour: "2-digit",
+						minute: "2-digit",
+						second: "2-digit",
+					})
+				}
+			</span>
 		</div>
 		<div class="py-54 text-center">Looks like a website is in the works.</div>
 	</body>
 </html>
+
+<script>
+	const clock = document.getElementById("clock");
+	if (clock) {
+		setInterval(() => {
+			clock.textContent = new Date().toLocaleTimeString("en-IN", {
+				hour: "2-digit",
+				minute: "2-digit",
+				second: "2-digit",
+			});
+		}, 1000);
+	}
+</script>
